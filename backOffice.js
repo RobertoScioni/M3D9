@@ -11,8 +11,16 @@ const config = {
 		"Content-Type": "application/json",
 	},
 }
-
+/**
+ * @type {Array}
+ * @var articles this is our item catalog
+ */
 let articles
+
+/**
+ * @type {String}
+ * @var action this controls if we send new items or updates
+ */
 let action = "POST"
 
 /**
@@ -46,7 +54,10 @@ const sendData = async (pkg) => {
 		console.log(error)
 	}
 }
-
+/**
+ * prepares the data for the fetch
+ * @param {Event} event the triggering event is the #submit button
+ */
 const sender = (event) => {
 	event.preventDefault()
 	const form = event.target
@@ -94,6 +105,10 @@ const getData = async () => {
 	}
 }
 
+/**
+ * this toggles an item from a compact view to an extende one and viceversa
+ * @param {Event} event the triggering event is the click on the name of the product
+ */
 const toggleArticleBody = (event) => {
 	const card = event.target.closest(".card")
 	//console.log(card)
@@ -118,6 +133,7 @@ const toggleArticleBody = (event) => {
 }
 
 /**
+ * @function printArticles
  * prints articles according to a template
  * @param {Array} articles
  */
@@ -170,6 +186,10 @@ const edit = (event) => {
 	const card = event.target.closest(".card")
 	console.log("id to modify", card._id)
 }
+
+/**
+ * @var {String} id this contains the id parameter passed to the page in a search query, it's initialized false because we do a lot of truthy/falsy evaluation on it
+ */
 let id = false
 /**
  * initialize the page
