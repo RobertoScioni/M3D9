@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 	<!--
-          
-            You are building the new Amazon.
+            START FROM YESTERDAY'S WORK
+             You are building the new Amazon.
             This time you are also responsible for the back office.
             THIS is you CRUD endpoint
             https://striveschool-api.herokuapp.com/api/product/
@@ -27,8 +27,15 @@
             Where ######### is the access_token returned by the endpoint.
             #---------------------------------------------------------------#
             Today you have to implement:
-            - A backoffice page, where you can insert the product by specifying the parameters
-            - A front page, where the user can see the available products
+            - In the backoffice page
+                ✅a) Add a button and the functionality to EDIT a single product ( PUT  endpoint/{id})
+                ✅b) Add a button and the functionality to DELETE a single product ( DELETE endpoint/{id})
+                ✅c) Add validation to the product creation/edit form
+                ✅d) Display an error message if something goes wrong
+            - In the front page
+                ✅a) Add a loader while waiting for the product to load
+                b) Add a link on each item to go to a detail page
+            - Create a new detail page where you are going to display the item information
             ------ N.B. ------
             Tokens duration is set to 14 days. Whenever you'll need to obtain a new one you can send the following request:
             
@@ -157,7 +164,12 @@
 		</nav>
 		<!--#endregion-->
 		<!--#region shopfloor-->
-		<div class="container">
+		<div class="d-flex justify-content-center">
+			<div class="spinner-border text-primary my-auto loading" role="status">
+				<span class="sr-only">Loading...</span>
+			</div>
+		</div>
+		<div class="container articles d-none">
 			<div class="row" id="floor">
 				<div
 					class="card template m-2 col col-12 col-sm-6 col-md-4 p-0"

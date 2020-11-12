@@ -118,17 +118,78 @@
 			</a>
 		</nav>
 		<!--#endregion-->
-		<!--#region backoffice-->
-		<form onsubmit="sender(event)">
-			<div class="d-flex flex-column">
-			<input type="text" name="name" id="name" placeholder="Name" required></text>
-			<textarea name="description" id="description" placeholder="Descritpion" required></textarea>
-			<input type="text" name="brand" id="brand" placeholder="Brand" required></input>
-			<input type="url" name="imageUrl" id="imageUrl" placeholder="https://image.domain/image.webm" required></input>
-			<input type="number" name="price" id="price" min=0  step=".01" placeholder="price" required></input>
-			<button type="submit" class="btn btn-primary"required>Submit</button>
+		<!--#region templates-->
+		<div class="card template mx-2 my-2 p-0 article" style="width: 18rem">
+			<div class="card-header flex-fill d-flex p-0">
+				<div class="flex-fill"><h5 class="card-title name">Card title</h5></div>
+				<button
+					class="btn btn-danger btn-sm headerbtn"
+					onclick="deleteArticle(event)"
+				>
+					🗑
+				</button>
+				<a class="edit">
+					<button class="btn btn-primary btn-sm headerbtn">🖉</button></a
+				>
+			</div>
+			<div class="compact-me d-none">
+				<div class="card-body">
+					<img class="card-img-top" alt="..." />
+					<p class="card-text description">
+						Some quick example text to build on the card title and make up the
+						bulk of the card's content.
+					</p>
+				</div>
+			</div>
+			<div class="card-footer d-flex p-0">
+				<p class="badge badge-success flex-fill m-0 price">1dollar</p>
+			</div>
 		</div>
+		<!--#endregion-->
+
+		<!--#region backoffice-->
+		<!--#region form to add items-->
+		<form onsubmit="sender(event)">
+			<div class="d-flex flex-column UI">
+				<input type="text" name="name" id="name" placeholder="Name" required />
+				<textarea
+					name="description"
+					id="description"
+					placeholder="Descritpion"
+					required
+				></textarea>
+				<input
+					type="text"
+					name="brand"
+					id="brand"
+					placeholder="Brand"
+					required
+				/>
+				<input
+					type="url"
+					name="imageUrl"
+					id="imageUrl"
+					placeholder="https://image.domain/image.webm"
+					required
+				/>
+				<input
+					type="number"
+					name="price"
+					id="price"
+					min="0"
+					step=".01"
+					placeholder="price"
+					required
+				/>
+				<button id="submit" type="submit" class="btn btn-primary" required>
+					Submit
+				</button>
+			</div>
 		</form>
+		<!--#endregion-->
+		<!--#region container of the articles-->
+		<div id="articles" class="d-flex"></div>
+		<!--#endregion-->
 		<!--endregion-->
 	</body>
 </html>

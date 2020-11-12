@@ -44,6 +44,8 @@ const printArticles = (articles) => {
 		card.querySelector(".price").innerText = article.price
 		row.appendChild(card)
 	})
+	document.querySelector(".loading").classList.toggle("d-none")
+	document.querySelector(".articles").classList.toggle("d-none")
 }
 
 /**
