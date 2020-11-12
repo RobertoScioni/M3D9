@@ -41,6 +41,7 @@ const printArticles = (articles) => {
 		card.querySelector(".card-img-top").src = article.imageUrl
 		card.querySelector(".name").innerText = article.name
 		card.querySelector(".description").innerText = article.description
+		card.querySelector(".details").href = `detail.html?id=${article._id}`
 		card.querySelector(".price").innerText = article.price
 		row.appendChild(card)
 	})

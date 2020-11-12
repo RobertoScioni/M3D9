@@ -35,7 +35,8 @@ const sendData = async (pkg) => {
 			body: JSON.stringify(pkg),
 		})
 		if (response.ok) {
-			console.log("data successfully posted")
+			console.log(`data successfully ${action === "POST" ? "post" : "putt"}ed`)
+			alert(`data successfully ${action === "POST" ? "post" : "putt"}ed`)
 			articles = await getData()
 			printArticles(articles)
 		} else {
@@ -154,6 +155,7 @@ const deleteArticle = async (event) => {
 			method: "DELETE",
 		})
 		articles = await getData()
+		alert("element deleted")
 		printArticles(articles)
 	} catch (error) {
 		console.log(error)
